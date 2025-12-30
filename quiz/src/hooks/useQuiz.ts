@@ -12,7 +12,7 @@ export interface FullResults {
 
 export function useQuiz() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState<StyleLetter[]>([]);
+  const [answers, setAnswers] = useState<StyleLetter[][]>([]);  // Tableau de tableaux
   const [quizState, setQuizState] = useState<QuizState>('intro');
 
   const totalQuestions = questions.length;
@@ -22,25 +22,30 @@ export function useQuiz() {
     return questions[currentIndex] || null;
   }, [currentIndex]);
 
+  // Flatten les réponses pour le calcul (transformer StyleLetter[][] en StyleLetter[])
+  const flattenedAnswers = useMemo(() => {
+    return answers.flat();
+  }, [answers]);
+
   // Résultat principal (pour compatibilité)
   const result: StyleResult | null = useMemo(() => {
-    if (quizState !== 'result' || answers.length === 0) return null;
-    const quizResults = calculateFullResults(answers);
+    if (quizState !== 'result' || flattenedAnswers.length === 0) return null;
+    const quizResults = calculateFullResults(flattenedAnswers);
     return styleResults[quizResults.primary];
-  }, [quizState, answers]);
+  }, [quizState, flattenedAnswers]);
 
   // Résultats complets avec styles secondaires
   const fullResults: FullResults | null = useMemo(() => {
-    if (quizState !== 'result' || answers.length === 0) return null;
+    if (quizState !== 'result' || flattenedAnswers.length === 0) return null;
 
-    const quizResults: QuizResults = calculateFullResults(answers);
+    const quizResults: QuizResults = calculateFullResults(flattenedAnswers);
 
     return {
       primary: styleResults[quizResults.primary],
       secondary: quizResults.secondary.map(letter => styleResults[letter]),
       distribution: quizResults.distribution,
     };
-  }, [quizState, answers]);
+  }, [quizState, flattenedAnswers]);
 
   const startQuiz = useCallback(() => {
     setQuizState('playing');
@@ -48,10 +53,20 @@ export function useQuiz() {
     setAnswers([]);
   }, []);
 
+  // Toggle une réponse (ajouter ou retirer)
   const selectAnswer = useCallback((letter: StyleLetter) => {
     setAnswers(prev => {
       const newAnswers = [...prev];
-      newAnswers[currentIndex] = letter;
+      const currentSelections = newAnswers[currentIndex] || [];
+
+      if (currentSelections.includes(letter)) {
+        // Retirer la sélection
+        newAnswers[currentIndex] = currentSelections.filter(l => l !== letter);
+      } else {
+        // Ajouter la sélection
+        newAnswers[currentIndex] = [...currentSelections, letter];
+      }
+
       return newAnswers;
     });
   }, [currentIndex]);
@@ -77,8 +92,8 @@ export function useQuiz() {
     setAnswers([]);
   }, []);
 
-  const currentAnswer = answers[currentIndex] || null;
-  const canGoNext = currentAnswer !== null;
+  const currentAnswers = answers[currentIndex] || [];
+  const canGoNext = currentAnswers.length > 0;  // Au moins une sélection
   const canGoPrevious = currentIndex > 0;
   const isLastQuestion = currentIndex === totalQuestions - 1;
 
@@ -92,7 +107,7 @@ export function useQuiz() {
     fullResults,
     progress,
     totalQuestions,
-    currentAnswer,
+    currentAnswers,  // Renommé: tableau de sélections pour la question actuelle
 
     // Computed
     canGoNext,

@@ -25,10 +25,10 @@ export type QuizState = 'intro' | 'playing' | 'result';
 
 export interface QuizContextType {
   currentIndex: number;
-  answers: StyleLetter[];
+  answers: StyleLetter[][];  // Tableau de tableaux pour sélection multiple
   quizState: QuizState;
   result: StyleResult | null;
-  selectAnswer: (letter: StyleLetter) => void;
+  selectAnswer: (letter: StyleLetter) => void;  // Toggle la sélection
   nextQuestion: () => void;
   previousQuestion: () => void;
   restart: () => void;

@@ -38,8 +38,8 @@ export function OptionButton({
           : "border-gray-200 hover:border-amber-300 hover:bg-amber-50/50"
       )}
     >
-      {/* Letter badge */}
-      <div className="flex items-start gap-4">
+      {/* Checkbox indicator + Label */}
+      <div className="flex items-center gap-3">
         <motion.div
           initial={false}
           animate={{
@@ -48,27 +48,25 @@ export function OptionButton({
           }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className={cn(
-            "flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg transition-colors",
-            isSelected ? "text-white" : "text-gray-500 group-hover:text-amber-600"
+            "flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center transition-colors",
+            isSelected ? "text-white" : "text-gray-400 group-hover:text-amber-500"
           )}
         >
-          {isSelected ? (
+          {isSelected && (
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
             >
-              <Check className="w-5 h-5" />
+              <Check className="w-4 h-4" />
             </motion.div>
-          ) : (
-            value
           )}
         </motion.div>
 
         {/* Label */}
         <span
           className={cn(
-            "flex-1 text-base font-medium leading-snug transition-colors pt-2",
+            "flex-1 text-base font-medium leading-snug transition-colors",
             isSelected ? "text-amber-900" : "text-gray-700 group-hover:text-gray-900"
           )}
         >

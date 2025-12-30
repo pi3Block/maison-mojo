@@ -7,7 +7,7 @@ import type { Question, StyleLetter } from '@/types/quiz';
 
 interface QuestionCardProps {
   question: Question;
-  currentAnswer: StyleLetter | null;
+  currentAnswers: StyleLetter[];  // Tableau de sélections multiples
   onSelectAnswer: (value: StyleLetter) => void;
   onNext: () => void;
   onPrevious: () => void;
@@ -18,7 +18,7 @@ interface QuestionCardProps {
 
 export function QuestionCard({
   question,
-  currentAnswer,
+  currentAnswers,
   onSelectAnswer,
   onNext,
   onPrevious,
@@ -60,12 +60,27 @@ export function QuestionCard({
                 key={option.value}
                 label={option.label}
                 value={option.value}
-                isSelected={currentAnswer === option.value}
+                isSelected={currentAnswers.includes(option.value)}
                 onSelect={onSelectAnswer}
                 index={index}
               />
             ))}
           </div>
+
+          {/* Indication sélection multiple */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-center text-sm text-gray-500 mt-4"
+          >
+            Vous pouvez sélectionner plusieurs réponses
+            {currentAnswers.length > 0 && (
+              <span className="ml-2 font-medium text-amber-600">
+                ({currentAnswers.length} sélectionnée{currentAnswers.length > 1 ? 's' : ''})
+              </span>
+            )}
+          </motion.p>
 
           {/* Navigation */}
           <motion.div

@@ -14,7 +14,7 @@ export function Quiz() {
     fullResults,
     progress,
     totalQuestions,
-    currentAnswer,
+    currentAnswers,
     canGoNext,
     canGoPrevious,
     isLastQuestion,
@@ -65,7 +65,7 @@ export function Quiz() {
                 <QuestionCard
                   key={currentQuestion.id}
                   question={currentQuestion}
-                  currentAnswer={currentAnswer}
+                  currentAnswers={currentAnswers}
                   onSelectAnswer={selectAnswer}
                   onNext={nextQuestion}
                   onPrevious={previousQuestion}
