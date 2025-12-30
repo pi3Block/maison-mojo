@@ -1,0 +1,84 @@
+ : Quelle ambiance déco vous correspond ?
+
+1.Quel trait de caractère te décrit le mieux?
+A. Audacieux, j'aime oser
+B. Calme, je recherche l'harmonie et la sérénité
+C. Chaleureux, j'aime la convivialité
+D. Sophistiqué, j'apprécie les détails raffinés
+E. Spontané, je suis mon instinct naturel
+F. Nostalgique, je suis attaché aux souvenirs
+G. Curieux, j'adore découvrir
+H. Pratique, j'aime que les choses soient
+organisées et fonctionnelles
+I. Authentique, je privilégie l'originalité
+J. Terre-à-terre, j'apprécie le naturel
+K. Simple, j'apprécie les choses simples
+
+2.Comment décrirais-tu ton style vestimentaire ?
+A. Coloré et audacieux
+B. Épuré et minimaliste,
+C. Confortable et enveloppant
+D. Chic et intemporel
+E. Naturel et durable
+F. Vintage
+G. Ethnique ou bohème, j’aime les imprimés
+H. Urbain et pratique
+I. Original, fait main
+J. Décontracté
+K. Sobre et fonctionnel
+
+3.Quelle activité te ressource le plus?
+A. Danser ou assister à un événement culturel
+B. Méditer ou faire du yoga
+C. Lire un bon livre au coin du feu
+D. Flâner dans une galerie d'art ou un musée
+E. Marcher en forêt ou faire du jardinage
+F. Chiner dans les brocantes
+G. Voyager et découvrir de nouvelles cultures
+H. Visiter des sites industriels ou historiques
+I. Participer à des ateliers de création artisanale
+J. S’occuper d’ animaux ou cultiver un potager
+K. Passer du temps dans une maison de
+vacances en bord de mer
+
+4.Si tu devais choisir un livre à lire?
+A. Un manga ou une BD
+B. Un livre sur la philosophie zen
+C. Un roman feel-good ou un conte de Noël
+D. Un classique de la littérature française
+E. Un essai sur l'écologie ou le bien-être
+F. Un roman historique ou une biographie
+G. Un récit de voyage ou une aventure exotique
+H. Un manuel pratique sur le bricolage
+I. Un livre sur l’ Histoire et ses traditions
+J. Un guide sur le jardinage
+K. Un livre sur la photographie
+
+5.Quelle phrase te correspond le mieux?
+A. "La vie est trop courte pour être ennuyeuse"
+B. "Moins, c'est plus"
+C. "Le confort avant tout"
+D. "La beauté réside dans les détails"
+E. "La nature est mon sanctuaire"
+F. "Tout ce qui est ancien a une histoire à
+raconter"
+G. "Voyager, c'est vivre"
+H. "Le fonctionnel peut aussi être esthétique"
+I. "L'artisanat est l'âme d'une culture"
+J. "La simplicité rustique a son charme"
+K. "La simplicité est la clé du bonheur"
+
+6.Si tu étais une ville,tu serais?
+A. Berlin, pour l'énergie et la créativité
+B. Kyoto, pour le côté épuré et apaisant
+C. Reykjavik, pour le confort et la nature
+D. Rome, pour le charme et l'élégance classique
+E. Sydney, pour la proximité avec la nature
+F. Londres, pour le côté vintage et historique
+G. Bali, pour l'esprit de voyage et d'aventure
+H. New York, pour le style industriel et urbain
+I. Marrakech, pour l'artisanat et les traditions
+locales
+J. Annecy, pour une atmosphère village rustique
+K. Stockholm, pour l'équilibre entre design
+contemporain et nature

@@ -1,0 +1,11 @@
+Majorité de A : Ambiance Pop 
+Majorité de B : Ambiance Japandi 
+Majorité de C : Ambiance Cocooning 
+Majorité de D : Ambiance Haussmannienne 
+Majorité de E : Ambiance Organique 
+Majorité de F : Ambiance Vintage 
+Majorité de G : Ambiance Bohème 
+Majorité de H : Ambiance Industrielle 
+Majorité de I : Ambiance Artisanat 
+Majorité de J : Ambiance Maison de campagne 
+Majorité de K : Ambiance Scandinave  
